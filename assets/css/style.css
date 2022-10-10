@@ -82,6 +82,7 @@ sub { bottom: -.25em; }
 body {
   box-sizing: border-box;
   font-family: sans-serif;
+  background-color: #7895B2;
 }
 
 a { 
@@ -94,42 +95,130 @@ li {
   list-style-type: none;
 }
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 /* for wrapper */
 .wrapper {
   max-width: 1360px;
-  width: 86%; 
+  width: 80%; 
   margin: 0 auto;
 }
-
-/*=================================
-  Header styling starts here
-=================================*/
-
-
-
-/*=================================
-  Header styling ends here
-=================================*/  
 
 /*=================================
   main styling starts here
 =================================*/
 
+/* Accordians CSS start */
+.accordian-section { padding: 20px 0; }
 
+h1 {
+  margin: 10px 0;
+  font-size: 32px;
+  color: #E8DFCA;
+  text-align: center;
+}
+
+h2 {
+  padding: 20px 0;
+  font-size: 26px;
+  color: #F5EFE6;
+  text-align: center;
+}
+
+h3 {
+  font-size: 20px;
+  color: #F5EFE6;
+}
+
+h4 {
+  padding: 5px 0;
+  font-size: 20px;
+  color: #4C6793;
+}
+
+.accordian { 
+  display: block; 
+  cursor: pointer;
+}
+
+.accordian-title{
+  padding: 16px 20px;
+  border: 1px solid #E8DFCA;
+  background-color: #4C6793;
+}
+
+.accordian-title:hover, 
+.accordian.active .accordian-title  {
+  background-color: #7895B2;
+}
+
+.accordian-title:after {
+  content: "\f078";
+  font-family: "FontAwesome";
+  font-size: 16px;
+  float: right;
+}
+
+.accordian.active .accordian-title::after{
+  content: "\f077";
+  font-family: "FontAwesome";
+  font-size: 16px;
+  float: right;
+}
+
+.accordian-content {
+  padding: 16px 20px;
+  background-color: #E8DFCA;
+  transition: .5s;
+}
+
+.accordian-content p, 
+.tab-content p {
+  width: 95%;
+  padding: 10px 0;
+}
+
+.accordian-content { display: none; }
+.accordian.active .accordian-content { display: block; }
+/* Accordians CSS END */
+
+/* Tabs CSS Start */
+
+.tab a{
+  padding: 12px;
+  border: 1px solid #4C6793;
+  color: #F5EFE6;
+}
+
+.tab a:hover { border: 1px solid #E8DFCA; }
+
+.tab.active a { 
+  border: 1px solid #E8DFCA; 
+  background-color: #F5EFE6; 
+  color: #4C6793;
+}
+
+.tab-content {
+  padding: 24px;
+  background-color: #F5EFE6;
+}
+
+.tab-content h3 { 
+  padding: 5px 0;
+  color: #4C6793; 
+}
+
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+/* Tabs CSS End */
 
 /*=================================
   main styling ends here
 =================================*/
-
-/*=================================
-  footer styling starts here
-=================================*/ 
-
-
-
- /*=================================
-  footer styling ends here
-=================================*/ 
 
 /*media query starts*/
 /*media query for 995px starts here*/
