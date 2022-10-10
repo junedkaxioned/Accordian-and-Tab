@@ -112,8 +112,8 @@ li {
   main styling starts here
 =================================*/
 
-/* Accordians CSS start */
-.accordian-section { padding: 20px 0; }
+/* Accordions CSS start */
+.accordion-section { padding: 20px 0; }
 
 h1 {
   margin: 10px 0;
@@ -140,51 +140,65 @@ h4 {
   color: #4C6793;
 }
 
-.accordian { 
+.accordion { 
   display: block; 
+  overflow: hidden;
   cursor: pointer;
 }
 
-.accordian-title{
+.accordion-title{
   padding: 16px 20px;
   border: 1px solid #E8DFCA;
   background-color: #4C6793;
 }
 
-.accordian-title:hover, 
-.accordian.active .accordian-title  {
+.accordion-title:hover, 
+.accordion.active .accordion-title  {
   background-color: #7895B2;
 }
 
-.accordian-title:after {
+.accordion-title:after {
   content: "\f078";
   font-family: "FontAwesome";
   font-size: 16px;
   float: right;
 }
 
-.accordian.active .accordian-title::after{
+.accordion.active .accordion-title::after {
   content: "\f077";
   font-family: "FontAwesome";
   font-size: 16px;
   float: right;
 }
 
-.accordian-content {
+.accordion-content {
   padding: 16px 20px;
+  display: none;
   background-color: #E8DFCA;
-  transition: .5s;
 }
 
-.accordian-content p, 
+.accordion-content p, 
 .tab-content p {
   width: 95%;
   padding: 10px 0;
 }
 
-.accordian-content { display: none; }
-.accordian.active .accordian-content { display: block; }
-/* Accordians CSS END */
+.accordion.active .accordion-content {
+  display: block; 
+  animation: showContent .3s linear forwards;
+  position: relative;
+  z-index: -1;
+}
+
+@keyframes showContent {
+  0% {
+    transform: translateY(-100px)
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+/* Accordions CSS END */
 
 /* Tabs CSS Start */
 
@@ -213,7 +227,19 @@ h4 {
 }
 
 .tab-content { display: none; }
-.tab-content.active { display: block; }
+.tab-content.active { 
+  display: block;
+  animation: showTabs .7s linear forwards;
+}
+
+@keyframes showTabs {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 /* Tabs CSS End */
 
 /*=================================
